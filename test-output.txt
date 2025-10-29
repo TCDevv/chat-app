@@ -1,0 +1,1174 @@
+
+> chat-app@0.0.0 test:coverage
+> vitest --coverage
+
+
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90mc:/Users/chuck/OneDrive/Documents/Project/chat-app[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [31m❯[39m src/services/__tests__/LocalStorageService.test.ts [2m([22m[2m13 tests[22m[2m | [22m[31m10 failed[39m[2m)[22m[32m 67[2mms[22m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mgetItem[2m > [22mshould return parsed item from localStorage[39m[32m 29[2mms[22m[39m
+[31m     → expected null to deeply equal { name: 'Test', value: 123 }[39m
+   [32m✓[39m LocalStorageService[2m > [22mgetItem[2m > [22mshould return null when item does not exist[32m 1[2mms[22m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mgetItem[2m > [22mshould return null and log error when JSON parsing fails[39m[32m 9[2mms[22m[39m
+[31m     → expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+   [32m✓[39m LocalStorageService[2m > [22mgetItem[2m > [22mshould handle null value gracefully[32m 1[2mms[22m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22msetItem[2m > [22mshould store item in localStorage as JSON string[39m[32m 3[2mms[22m[39m
+[31m     → expected undefined to be '{"name":"Test","value":456}' // Object.is equality[39m
+[31m   [31m×[31m LocalStorageService[2m > [22msetItem[2m > [22mshould overwrite existing item[39m[32m 2[2mms[22m[39m
+[31m     → expected null to be 'second' // Object.is equality[39m
+[31m   [31m×[31m LocalStorageService[2m > [22msetItem[2m > [22mshould handle storing arrays[39m[32m 2[2mms[22m[39m
+[31m     → expected null to deeply equal [ 1, 2, 3, 4, 5 ][39m
+[31m   [31m×[31m LocalStorageService[2m > [22msetItem[2m > [22mshould log error when localStorage.setItem fails[39m[32m 2[2mms[22m[39m
+[31m     → expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mremoveItem[2m > [22mshould remove item from localStorage[39m[32m 3[2mms[22m[39m
+[31m     → expected undefined to be null[39m
+   [32m✓[39m LocalStorageService[2m > [22mremoveItem[2m > [22mshould not throw error when removing non-existent item[32m 3[2mms[22m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mremoveItem[2m > [22mshould log error when localStorage.removeItem fails[39m[32m 2[2mms[22m[39m
+[31m     → expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mclear[2m > [22mshould clear all items from localStorage[39m[32m 5[2mms[22m[39m
+[31m     → expected +0 to be 3 // Object.is equality[39m
+[31m   [31m×[31m LocalStorageService[2m > [22mclear[2m > [22mshould log error when localStorage.clear fails[39m[32m 1[2mms[22m[39m
+[31m     → expected "error" to be called with arguments: [ 'Error clearing localStorage', …(1) ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+ [32m✓[39m src/utils/__tests__/helpers.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 46[2mms[22m[39m
+[90mstdout[2m | src/hooks/__tests__/useInfiniteMessages.test.ts[2m > [22m[2museInfiniteMessages[2m > [22m[2mshould handle worker ALL_MESSAGES_LOADED response
+[22m[39mAll messages loaded from worker: [33m100[39m
+
+[90mstdout[2m | src/hooks/__tests__/useInfiniteMessages.test.ts[2m > [22m[2museInfiniteMessages[2m > [22m[2mshould load all messages when messageId is in URL
+[22m[39mMessageId detected in URL: msg_50 - Loading all messages for chat: chat_1
+
+ [31m❯[39m src/workers/__tests__/transport.worker.test.ts [2m([22m[2m7 tests[22m[2m | [22m[31m7 failed[39m[2m)[22m[32m 35[2mms[22m[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould handle LOAD_MESSAGES_PAGINATED message type[39m[32m 20[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould handle LOAD_ALL_MESSAGES message type[39m[32m 2[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould handle GENERATE_REPLY message type[39m[32m 2[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould return hasMore false when all messages are loaded[39m[32m 1[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould paginate correctly with different offsets[39m[32m 1[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould log warning for unknown message type[39m[32m 1[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+[31m   [31m×[31m Transport Worker[2m > [22mshould generate different replies for multiple requests[39m[32m 1[2mms[22m[39m
+[31m     → Worker is not defined[39m
+[31m     → Cannot read properties of undefined (reading 'terminate')[39m
+ [31m❯[39m src/di/__tests__/container.test.ts [2m([22m[2m11 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 111[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould be an instance of Container[32m 6[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould bind LocalStorageService[32m 16[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould bind MessageService[32m 2[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould bind PostMessageService[32m 1[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould return same instance for LocalStorageService (singleton)[32m 1[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould return same instance for MessageService (singleton)[32m 1[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould return same instance for PostMessageService (singleton)[32m 1[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould inject LocalStorageService into MessageService[32m 1[2mms[22m[39m
+[31m   [31m×[31m DI Container[2m > [22mshould allow MessageService to interact with storage[39m[32m 73[2mms[22m[39m
+[31m     → expected null to deeply equal { value: 'test' }[39m
+   [32m✓[39m DI Container[2m > [22mshould provide functional MessageService operations[32m 3[2mms[22m[39m
+   [32m✓[39m DI Container[2m > [22mshould provide functional PostMessageService operations[32m 1[2mms[22m[39m
+ [32m✓[39m src/__tests__/App.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 135[2mms[22m[39m
+ [31m❯[39m src/services/__tests__/MessageService.test.ts [2m([22m[2m28 tests[22m[2m | [22m[31m17 failed[39m[2m)[22m[32m 212[2mms[22m[39m
+   [32m✓[39m MessageService[2m > [22mgetChats[2m > [22mshould return empty array when no chats exist[32m 14[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22mgetChats[2m > [22mshould return chats from localStorage[39m[32m 38[2mms[22m[39m
+[31m     → expected [] to deeply equal [ { id: 'chat_1', …(5) } ][39m
+   [32m✓[39m MessageService[2m > [22mgetMessages[2m > [22mshould return empty array when no messages exist[32m 2[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22mgetMessages[2m > [22mshould return only messages for specific chat[39m[32m 9[2mms[22m[39m
+[31m     → expected [] to have a length of 2 but got +0[39m
+[31m   [31m×[31m MessageService[2m > [22mgetMessagesPaginated[2m > [22mshould return paginated messages sorted by timestamp[39m[32m 14[2mms[22m[39m
+[31m     → expected [] to have a length of 2 but got +0[39m
+   [32m✓[39m MessageService[2m > [22mgetMessagesPaginated[2m > [22mshould return empty array for offset beyond messages[32m 2[2mms[22m[39m
+   [32m✓[39m MessageService[2m > [22mgetTotalMessageCount[2m > [22mshould return 0 when no messages exist[32m 2[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22mgetTotalMessageCount[2m > [22mshould return correct count for specific chat[39m[32m 3[2mms[22m[39m
+[31m     → expected +0 to be 2 // Object.is equality[39m
+   [32m✓[39m MessageService[2m > [22msendMessage[2m > [22mshould create and add a new message[32m 5[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22msendMessage[2m > [22mshould store message in localStorage[39m[32m 3[2mms[22m[39m
+[31m     → Target cannot be null or undefined.[39m
+[31m   [31m×[31m MessageService[2m > [22msendMessage[2m > [22mshould update chat last message[39m[32m 2[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+[31m   [31m×[31m MessageService[2m > [22msendMessage[2m > [22mshould not increment unread count for own messages[39m[32m 2[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+   [32m✓[39m MessageService[2m > [22maddMessage[2m > [22mshould add a message and notify subscribers[32m 5[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22maddMessage[2m > [22mshould increment unread count for received messages[39m[32m 2[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+[31m   [31m×[31m MessageService[2m > [22maddMessage[2m > [22mshould enforce message limit per chat[39m[32m 36[2mms[22m[39m
+[31m     → expected [] to have a length of 1000 but got +0[39m
+[31m   [31m×[31m MessageService[2m > [22maddMessage[2m > [22mshould not affect messages from other chats when enforcing limit[39m[32m 23[2mms[22m[39m
+[31m     → expected [] to have a length of 1 but got +0[39m
+   [32m✓[39m MessageService[2m > [22msubscribeToMessages[2m > [22mshould call callback when message is added[32m 2[2mms[22m[39m
+   [32m✓[39m MessageService[2m > [22msubscribeToMessages[2m > [22mshould return unsubscribe function[32m 2[2mms[22m[39m
+   [32m✓[39m MessageService[2m > [22msubscribeToMessages[2m > [22mshould support multiple subscribers[32m 2[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22msubscribeToChats[2m > [22mshould call callback when chats are updated[39m[32m 5[2mms[22m[39m
+[31m     → expected [] to deeply equal [ { id: 'chat_1', …(5) } ][39m
+[31m   [31m×[31m MessageService[2m > [22msubscribeToChats[2m > [22mshould return unsubscribe function[39m[32m 3[2mms[22m[39m
+[31m     → expected "spy" to be called 1 times, but got 0 times[39m
+[31m   [31m×[31m MessageService[2m > [22mmarkAsRead[2m > [22mshould set unread count to 0[39m[32m 3[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+[31m   [31m×[31m MessageService[2m > [22mmarkAsRead[2m > [22mshould notify chat subscribers[39m[32m 2[2mms[22m[39m
+[31m     → expected "spy" to be called at least once[39m
+   [32m✓[39m MessageService[2m > [22mmarkAsRead[2m > [22mshould do nothing if chat not found[32m 1[2mms[22m[39m
+[31m   [31m×[31m MessageService[2m > [22mmarkAsUnread[2m > [22mshould set unread count to default value when count not provided[39m[32m 2[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+[31m   [31m×[31m MessageService[2m > [22mmarkAsUnread[2m > [22mshould set unread count to specified value[39m[32m 2[2mms[22m[39m
+[31m     → Cannot read properties of null (reading '0')[39m
+[31m   [31m×[31m MessageService[2m > [22mmarkAsUnread[2m > [22mshould notify chat subscribers[39m[32m 20[2mms[22m[39m
+[31m     → expected "spy" to be called at least once[39m
+   [32m✓[39m MessageService[2m > [22mmarkAsUnread[2m > [22mshould do nothing if chat not found[32m 2[2mms[22m[39m
+ [32m✓[39m src/utils/__tests__/mockData.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 240[2mms[22m[39m
+ [32m✓[39m src/hooks/__tests__/useScrollToMessage.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 231[2mms[22m[39m
+ [32m✓[39m src/components/MessageArea/__tests__/MessageArea.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 541[2mms[22m[39m
+ [32m✓[39m src/components/ChatList/__tests__/ChatList.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 359[2mms[22m[39m
+ [32m✓[39m src/hooks/__tests__/useInfiniteMessages.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 454[2mms[22m[39m
+ [31m❯[39m src/hooks/__tests__/useMessages.test.ts [2m([22m[2m19 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 707[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould load initial chats on mount[32m 119[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould subscribe to chat updates[32m 7[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould unsubscribe from chat updates on unmount[32m 10[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould load messages when chatId is provided[32m 21[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould mark chat as read when loading messages[32m 31[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould subscribe to new messages for selected chat[32m 31[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould update messages when new message arrives for current chat[32m 63[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould not update messages when new message arrives for different chat[32m 27[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould clear messages when chatId is null[32m 19[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould reload messages when chatId changes[32m 70[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould unsubscribe from messages on unmount[32m 12[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould unsubscribe and resubscribe when chatId changes[32m 36[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22msendMessage[2m > [22mshould send message when content is valid[32m 28[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22msendMessage[2m > [22mshould not send message when chatId is null[32m 21[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22msendMessage[2m > [22mshould not send message when content is empty[32m 28[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22msendMessage[2m > [22mshould not send message when content is only whitespace[32m 49[2mms[22m[39m
+   [32m✓[39m useMessages[2m > [22mshould update chats when chat subscription callback is called[32m 37[2mms[22m[39m
+[31m   [31m×[31m useMessages[2m > [22mshould set loading to true initially when chatId is provided[39m[32m 49[2mms[22m[39m
+[31m     → expected false to be true // Object.is equality[39m
+   [32m✓[39m useMessages[2m > [22mshould set loading to false when chatId is null[32m 33[2mms[22m[39m
+ [31m❯[39m src/components/ChatLayout/__tests__/ChatLayout.test.tsx [2m([22m[2m16 tests[22m[2m | [22m[31m16 failed[39m[2m)[22m[33m 713[2mms[22m[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould render without crashing[39m[32m 186[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould display welcome message when no chat is selected[39m[32m 29[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould initialize PostMessage service on mount[39m[32m 28[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould destroy PostMessage service on unmount[39m[32m 56[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould initialize Web Worker on mount[39m[32m 30[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould pass callback to PostMessage service that calls addMessage[39m[32m 27[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould display ChatList with chats[39m[32m 28[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould handle chat selection[39m[32m 36[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould handle mark as unread callback[39m[32m 32[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould auto-select chat when messageId is in URL[39m[32m 30[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould not auto-select chat if messageId not found[39m[32m 31[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould not auto-select chat if already selected[39m[32m 32[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould handle worker MOCK_REPLY message[39m[32m 42[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould render MessageInput when chat is selected[39m[32m 34[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould disable MessageInput when loading[39m[32m 55[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+[31m   [31m×[31m ChatLayout[2m > [22mshould display selected chat name in MessageArea[39m[32m 28[2mms[22m[39m
+[31m     → worker.addEventListener is not a function[39m
+ [31m❯[39m src/components/MessageArea/__tests__/MessageAreaInfinite.test.tsx [2m([22m[2m27 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 1219[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould render without crashing[32m 228[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display chat name in header[32m 35[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display online status indicator when online[32m 37[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display offline status indicator when offline[32m 35[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not display status indicator when isOnline is undefined[32m 34[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould render all messages[32m 46[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display sender name for received messages[32m 49[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not display sender name for own messages[32m 39[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display message status for own messages[32m 41[2mms[22m[39m
+[31m   [31m×[31m MessageAreaInfinite[2m > [22mshould display date separators for different days[39m[32m 88[2mms[22m[39m
+[31m     → Unable to find an element with the text: /Jan 1, 2024/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"flex-1 flex flex-col bg-chat-bg min-h-0"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"p-4 bg-white border-b border-gray-200 shadow-sm flex-shrink-0"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"flex items-center gap-3"[31m
+        [36m>[31m
+          [36m<h5[31m
+            [33mclass[31m=[32m"text-lg font-semibold m-0 flex-1"[31m
+          [36m>[31m
+            [0mTest Chat[0m
+          [36m</h5>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center gap-2"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"w-2.5 h-2.5 rounded-full bg-green-500"[31m
+            [36m/>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"text-sm text-gray-600"[31m
+            [36m>[31m
+              [0mOnline[0m
+            [36m</span>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-1"[31m
+        [33mdata-testid[31m=[32m"messages-list"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"h-10 flex items-center justify-center mb-2"[31m
+        [36m/>[31m
+        [36m<div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-center my-4"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"bg-white rounded-full px-3 py-1 text-xs text-gray-500 shadow-sm"[31m
+            [36m>[31m
+              [0mMon, Jan 1[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex mb-1 justify-start"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m""[31m
+              [33mdata-message-id[31m=[32m"msg_1"[31m
+              [33mdata-testid[31m=[32m"message-msg_1"[31m
+              [33mstyle[31m=[32m"max-width: 70%;"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-white rounded-2xl rounded-bl-md
+                    "[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"text-xs font-semibold text-primary-dark mb-1"[31m
+                [36m>[31m
+                  [0mAlice[0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"text-[15px] leading-relaxed mb-1 text-gray-900"[31m
+                [36m>[31m
+                  [0mHello[0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-2 justify-end"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-[11px] text-gray-500"[31m
+                  [36m>[31m
+                    [0m10:00 AM[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex mb-1 justify-end"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m""[31m
+              [33mdata-message-id[31m=[32m"msg_2"[31m
+              [33mdata-testid[31m=[32m"message-msg_2"[31m
+              [33mstyle[31m=[32m"max-width: 70%;"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-primary text-white rounded-2xl rounded-br-md
+                    "[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"text-[15px] leading-relaxed mb-1 text-white"[31m
+                [36m>[31m
+                  [0mHi there![0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-2 justify-end"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-[11px] text-white/80"[31m
+                  [36m>[31m
+                    [0m10:01 AM[0m
+                  [36m</span>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-[11px] text-white/80"[31m
+                  [36m>[31m
+                    [0m✓[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex items-center justify-center my-4"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"bg-white rounded-full px-3 py-1 text-xs text-gray-500 shadow-sm"[31m
+            [36m>[31m
+              [0mTue, Jan 2[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex mb-1 justify-start"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m""[31m
+              [33mdata-message-id[31m=[32m"msg_3"[31m
+              [33mdata-testid[31m=[32m"message-msg_3"[31m
+              [33mstyle[31m=[32m"max-width: 70%;"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-white rounded-2xl rounded-bl-md
+                    "[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"text-xs font-semibold text-primary-dark mb-1"[31m
+                [36m>[31m
+                  [0mAlice[0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"text-[15px] leading-relaxed mb-1 text-gray-900"[31m
+                [36m>[31m
+                  [0mHow are you?[0m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex items-center gap-2 justify-end"[31m
+                [36m>[31m
+                  [36m<span[31m
+                    [33mclass[31m=[32m"text-[11px] text-gray-500"[31m
+                  [36m>[31m
+                    [0m02:00 PM[0m
+                  [36m</span>[31m
+                [36m</div>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display empty state when no messages and not loading[32m 13[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display empty state with chat name when provided[32m 12[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display loading indicator when loading[32m 36[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display "Load more" text when hasMore is true and not loading[32m 32[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not display "Load more" text when hasMore is false[32m 32[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould call onLoadMore when intersection observer triggers[32m 31[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not call onLoadMore when loading[32m 43[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not call onLoadMore when hasMore is false[32m 28[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould not call onLoadMore when not intersecting[32m 28[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould apply correct styling for own messages[32m 24[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould apply correct styling for received messages[32m 23[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould maintain scroll position when loading more messages[32m 142[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould render messages with data-message-id attribute[32m 30[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould display message timestamps[32m 37[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould show delivered status indicator for delivered messages[32m 20[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould show sent status indicator for sent messages[32m 23[2mms[22m[39m
+   [32m✓[39m MessageAreaInfinite[2m > [22mshould cleanup IntersectionObserver on unmount[32m 28[2mms[22m[39m
+ [32m✓[39m src/components/MessageInput/__tests__/MessageInput.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 2099[2mms[22m[39m
+   [33m[2m✓[22m[39m MessageInput[2m > [22mcalls onSendMessage with message content when send button is clicked [33m 879[2mms[22m[39m
+   [33m[2m✓[22m[39m MessageInput[2m > [22mclears input after sending message [33m 478[2mms[22m[39m
+   [33m[2m✓[22m[39m MessageInput[2m > [22mtrims whitespace from messages [33m 325[2mms[22m[39m
+ [32m✓[39m src/services/__tests__/PostMessageService.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m src/services/__tests__/MessageService.simple.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 53 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/di/__tests__/container.test.ts[2m > [22mDI Container[2m > [22mshould allow MessageService to interact with storage
+[31m[1mAssertionError[22m: expected null to deeply equal { value: 'test' }[39m
+
+[32m- Expected:[39m 
+{
+  "value": "test",
+}
+
+[31m+ Received:[39m 
+null
+
+[36m [2m❯[22m src/di/__tests__/container.test.ts:[2m72:23[22m[39m
+    [90m 70| [39m    [90m// Retrieve via storage service[39m
+    [90m 71| [39m    const retrieved = storageService.getItem<{ value: string }>('test_…
+    [90m 72| [39m    [34mexpect[39m(retrieved)[33m.[39m[34mtoEqual[39m({ value[33m:[39m [32m'test'[39m })[33m;[39m
+    [90m   | [39m                      [31m^[39m
+    [90m 73| [39m  })[33m;[39m
+    [90m 74| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/hooks/__tests__/useMessages.test.ts[2m > [22museMessages[2m > [22mshould set loading to true initially when chatId is provided
+[31m[1mAssertionError[22m: expected false to be true // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- true[39m
+[31m+ false[39m
+
+[36m [2m❯[22m src/hooks/__tests__/useMessages.test.ts:[2m373:36[22m[39m
+    [90m371| [39m
+    [90m372| [39m    [90m// During first render, loading might still be true[39m
+    [90m373| [39m    [34mexpect[39m(result[33m.[39mcurrent[33m.[39mloading)[33m.[39m[34mtoBe[39m([35mtrue[39m)[33m;[39m
+    [90m   | [39m                                   [31m^[39m
+    [90m374| [39m  })[33m;[39m
+    [90m375| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle LOAD_MESSAGES_PAGINATED message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle LOAD_ALL_MESSAGES message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle GENERATE_REPLY message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould return hasMore false when all messages are loaded
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould paginate correctly with different offsets
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould log warning for unknown message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould generate different replies for multiple requests
+[31m[1mReferenceError[22m: Worker is not defined[39m
+[36m [2m❯[22m src/workers/__tests__/transport.worker.test.ts:[2m13:5[22m[39m
+    [90m 11| [39m  [34mbeforeEach[39m(() [33m=>[39m {
+    [90m 12| [39m    [90m// Create worker instance[39m
+    [90m 13| [39m    worker = new Worker(new URL('../../workers/transport.worker.ts', i…
+    [90m   | [39m    [31m^[39m
+    [90m 14| [39m      type[33m:[39m [32m'module'[39m[33m,[39m
+    [90m 15| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle LOAD_MESSAGES_PAGINATED message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle LOAD_ALL_MESSAGES message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould handle GENERATE_REPLY message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould return hasMore false when all messages are loaded
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould paginate correctly with different offsets
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould log warning for unknown message type
+[41m[1m FAIL [22m[49m src/workers/__tests__/transport.worker.test.ts[2m > [22mTransport Worker[2m > [22mshould generate different replies for multiple requests
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'terminate')[39m
+[36m [2m❯[22m src/workers/__tests__/transport.worker.test.ts:[2m19:12[22m[39m
+    [90m 17| [39m
+    [90m 18| [39m  [34mafterEach[39m(() [33m=>[39m {
+    [90m 19| [39m    worker[33m.[39m[34mterminate[39m()[33m;[39m
+    [90m   | [39m           [31m^[39m
+    [90m 20| [39m  })[33m;[39m
+    [90m 21| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mgetItem[2m > [22mshould return parsed item from localStorage
+[31m[1mAssertionError[22m: expected null to deeply equal { name: 'Test', value: 123 }[39m
+
+[32m- Expected:[39m 
+{
+  "name": "Test",
+  "value": 123,
+}
+
+[31m+ Received:[39m 
+null
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m19:22[22m[39m
+    [90m 17| [39m      [35mconst[39m result [33m=[39m service[33m.[39mgetItem[33m<[39m[35mtypeof[39m testData[33m>[39m([32m'testKey'[39m)[33m;[39m
+    [90m 18| [39m
+    [90m 19| [39m      [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(testData)[33m;[39m
+    [90m   | [39m                     [31m^[39m
+    [90m 20| [39m    })[33m;[39m
+    [90m 21| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mgetItem[2m > [22mshould return null and log error when JSON parsing fails
+[31m[1mAssertionError[22m: expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m35:26[22m[39m
+    [90m 33| [39m
+    [90m 34| [39m      [34mexpect[39m(result)[33m.[39m[34mtoBeNull[39m()[33m;[39m
+    [90m 35| [39m      [34mexpect[39m(consoleSpy)[33m.[39m[34mtoHaveBeenCalledWith[39m(
+    [90m   | [39m                         [31m^[39m
+    [90m 36| [39m        expect.stringContaining('Error getting item from localStorage:…
+    [90m 37| [39m        expect[33m.[39m[34many[39m([33mError[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22msetItem[2m > [22mshould store item in localStorage as JSON string
+[31m[1mAssertionError[22m: expected undefined to be '{"name":"Test","value":456}' // Object.is equality[39m
+
+[32m- Expected:[39m 
+"{\"name\":\"Test\",\"value\":456}"
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m59:22[22m[39m
+    [90m 57| [39m
+    [90m 58| [39m      [35mconst[39m stored [33m=[39m localStorage[33m.[39m[34mgetItem[39m([32m'testKey'[39m)[33m;[39m
+    [90m 59| [39m      [34mexpect[39m(stored)[33m.[39m[34mtoBe[39m([33mJSON[39m[33m.[39m[34mstringify[39m(testData))[33m;[39m
+    [90m   | [39m                     [31m^[39m
+    [90m 60| [39m      [34mexpect[39m([33mJSON[39m[33m.[39m[34mparse[39m(stored[33m![39m))[33m.[39m[34mtoEqual[39m(testData)[33m;[39m
+    [90m 61| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22msetItem[2m > [22mshould overwrite existing item
+[31m[1mAssertionError[22m: expected null to be 'second' // Object.is equality[39m
+
+[32m- Expected:[39m 
+"second"
+
+[31m+ Received:[39m 
+null
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m69:22[22m[39m
+    [90m 67| [39m      [35mconst[39m result [33m=[39m service[33m.[39mgetItem[33m<[39mstring[33m>[39m([32m'key'[39m)[33m;[39m
+    [90m 68| [39m
+    [90m 69| [39m      [34mexpect[39m(result)[33m.[39m[34mtoBe[39m([32m'second'[39m)[33m;[39m
+    [90m   | [39m                     [31m^[39m
+    [90m 70| [39m    })[33m;[39m
+    [90m 71| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22msetItem[2m > [22mshould handle storing arrays
+[31m[1mAssertionError[22m: expected null to deeply equal [ 1, 2, 3, 4, 5 ][39m
+
+[32m- Expected:[39m 
+[
+  1,
+  2,
+  3,
+  4,
+  5,
+]
+
+[31m+ Received:[39m 
+null
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m78:22[22m[39m
+    [90m 76| [39m
+    [90m 77| [39m      [35mconst[39m result [33m=[39m service[33m.[39mgetItem[33m<[39mnumber[][33m>[39m([32m'arrayKey'[39m)[33m;[39m
+    [90m 78| [39m      [34mexpect[39m(result)[33m.[39m[34mtoEqual[39m(testArray)[33m;[39m
+    [90m   | [39m                     [31m^[39m
+    [90m 79| [39m    })[33m;[39m
+    [90m 80| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22msetItem[2m > [22mshould log error when localStorage.setItem fails
+[31m[1mAssertionError[22m: expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m89:26[22m[39m
+    [90m 87| [39m      service[33m.[39m[34msetItem[39m([32m'failKey'[39m[33m,[39m { data[33m:[39m [32m'test'[39m })[33m;[39m
+    [90m 88| [39m
+    [90m 89| [39m      [34mexpect[39m(consoleSpy)[33m.[39m[34mtoHaveBeenCalledWith[39m(
+    [90m   | [39m                         [31m^[39m
+    [90m 90| [39m        expect.stringContaining('Error setting item to localStorage: f…
+    [90m 91| [39m        expect[33m.[39m[34many[39m([33mError[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mremoveItem[2m > [22mshould remove item from localStorage
+[31m[1mAssertionError[22m: expected undefined to be null[39m
+
+[32m- Expected:[39m 
+null
+
+[31m+ Received:[39m 
+undefined
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m106:49[22m[39m
+    [90m104| [39m      service[33m.[39m[34mremoveItem[39m([32m'removeKey'[39m)[33m;[39m
+    [90m105| [39m
+    [90m106| [39m      [34mexpect[39m(localStorage[33m.[39m[34mgetItem[39m([32m'removeKey'[39m))[33m.[39m[34mtoBeNull[39m()[33m;[39m
+    [90m   | [39m                                                [31m^[39m
+    [90m107| [39m    })[33m;[39m
+    [90m108| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mremoveItem[2m > [22mshould log error when localStorage.removeItem fails
+[31m[1mAssertionError[22m: expected "error" to be called with arguments: [ StringContaining{…}, Any<Error> ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m121:26[22m[39m
+    [90m119| [39m      service[33m.[39m[34mremoveItem[39m([32m'failKey'[39m)[33m;[39m
+    [90m120| [39m
+    [90m121| [39m      [34mexpect[39m(consoleSpy)[33m.[39m[34mtoHaveBeenCalledWith[39m(
+    [90m   | [39m                         [31m^[39m
+    [90m122| [39m        expect.stringContaining('Error removing item from localStorage…
+    [90m123| [39m        expect[33m.[39m[34many[39m([33mError[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mclear[2m > [22mshould clear all items from localStorage
+[31m[1mAssertionError[22m: expected +0 to be 3 // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 3[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m136:35[22m[39m
+    [90m134| [39m      localStorage[33m.[39m[34msetItem[39m([32m'key2'[39m[33m,[39m [32m'value2'[39m)[33m;[39m
+    [90m135| [39m      localStorage[33m.[39m[34msetItem[39m([32m'key3'[39m[33m,[39m [32m'value3'[39m)[33m;[39m
+    [90m136| [39m      [34mexpect[39m(localStorage[33m.[39mlength)[33m.[39m[34mtoBe[39m([34m3[39m)[33m;[39m
+    [90m   | [39m                                  [31m^[39m
+    [90m137| [39m
+    [90m138| [39m      service[33m.[39m[34mclear[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/LocalStorageService.test.ts[2m > [22mLocalStorageService[2m > [22mclear[2m > [22mshould log error when localStorage.clear fails
+[31m[1mAssertionError[22m: expected "error" to be called with arguments: [ 'Error clearing localStorage', …(1) ][90m
+
+Number of calls: [1m0[22m
+[31m[39m
+[36m [2m❯[22m src/services/__tests__/LocalStorageService.test.ts:[2m151:26[22m[39m
+    [90m149| [39m      service[33m.[39m[34mclear[39m()[33m;[39m
+    [90m150| [39m
+    [90m151| [39m      [34mexpect[39m(consoleSpy)[33m.[39m[34mtoHaveBeenCalledWith[39m(
+    [90m   | [39m                         [31m^[39m
+    [90m152| [39m        [32m'Error clearing localStorage'[39m[33m,[39m
+    [90m153| [39m        expect[33m.[39m[34many[39m([33mError[39m)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mgetChats[2m > [22mshould return chats from localStorage
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'chat_1', …(5) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "avatar": null,[39m
+[32m-     "id": "chat_1",[39m
+[32m-     "lastMessage": null,[39m
+[32m-     "name": "Test Chat",[39m
+[32m-     "online": true,[39m
+[32m-     "unreadCount": 0,[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m46:21[22m[39m
+    [90m 44| [39m
+    [90m 45| [39m      [35mconst[39m chats [33m=[39m messageService[33m.[39m[34mgetChats[39m()[33m;[39m
+    [90m 46| [39m      [34mexpect[39m(chats)[33m.[39m[34mtoEqual[39m(mockChats)[33m;[39m
+    [90m   | [39m                    [31m^[39m
+    [90m 47| [39m    })[33m;[39m
+    [90m 48| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mgetMessages[2m > [22mshould return only messages for specific chat
+[31m[1mAssertionError[22m: expected [] to have a length of 2 but got +0[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 2[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m89:24[22m[39m
+    [90m 87| [39m
+    [90m 88| [39m      [35mconst[39m messages [33m=[39m messageService[33m.[39m[34mgetMessages[39m([32m'chat_1'[39m)[33m;[39m
+    [90m 89| [39m      [34mexpect[39m(messages)[33m.[39m[34mtoHaveLength[39m([34m2[39m)[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m 90| [39m      [34mexpect[39m(messages[33m.[39m[34mmap[39m(m [33m=>[39m m[33m.[39mid))[33m.[39m[34mtoEqual[39m([[32m'msg_1'[39m[33m,[39m [32m'msg_3'[39m])[33m;[39m
+    [90m 91| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mgetMessagesPaginated[2m > [22mshould return paginated messages sorted by timestamp
+[31m[1mAssertionError[22m: expected [] to have a length of 2 but got +0[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 2[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m128:21[22m[39m
+    [90m126| [39m
+    [90m127| [39m      const page1 = messageService.getMessagesPaginated('chat_1', 0, 2…
+    [90m128| [39m      [34mexpect[39m(page1)[33m.[39m[34mtoHaveLength[39m([34m2[39m)[33m;[39m
+    [90m   | [39m                    [31m^[39m
+    [90m129| [39m      [34mexpect[39m(page1[[34m0[39m][33m.[39mid)[33m.[39m[34mtoBe[39m([32m'msg_1'[39m)[33m;[39m
+    [90m130| [39m      [34mexpect[39m(page1[[34m1[39m][33m.[39mid)[33m.[39m[34mtoBe[39m([32m'msg_2'[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mgetTotalMessageCount[2m > [22mshould return correct count for specific chat
+[31m[1mAssertionError[22m: expected +0 to be 2 // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 2[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m194:61[22m[39m
+    [90m192| [39m      storageService[33m.[39m[34msetItem[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mMESSAGES[39m[33m,[39m mockMessages)[33m;[39m
+    [90m193| [39m
+    [90m194| [39m      [34mexpect[39m(messageService[33m.[39m[34mgetTotalMessageCount[39m([32m'chat_1'[39m))[33m.[39m[34mtoBe[39m([34m2[39m)[33m;[39m
+    [90m   | [39m                                                            [31m^[39m
+    [90m195| [39m      [34mexpect[39m(messageService[33m.[39m[34mgetTotalMessageCount[39m([32m'chat_2'[39m))[33m.[39m[34mtoBe[39m([34m1[39m)[33m;[39m
+    [90m196| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22msendMessage[2m > [22mshould store message in localStorage
+[31m[1mAssertionError[22m: Target cannot be null or undefined.[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m242:24[22m[39m
+    [90m240| [39m
+    [90m241| [39m      const messages = storageService.getItem<Message[]>(STORAGE_KEYS.…
+    [90m242| [39m      [34mexpect[39m(messages)[33m.[39m[34mtoHaveLength[39m([34m1[39m)[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m243| [39m      [34mexpect[39m(messages[33m![39m[[34m0[39m][33m.[39mcontent)[33m.[39m[34mtoBe[39m([32m'Test message'[39m)[33m;[39m
+    [90m244| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22msendMessage[2m > [22mshould update chat last message
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m256:14[22m[39m
+    [90m254| [39m
+    [90m255| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m256| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39mlastMessage)[33m.[39m[34mtoEqual[39m(message)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m257| [39m    })[33m;[39m
+    [90m258| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22msendMessage[2m > [22mshould not increment unread count for own messages
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m269:14[22m[39m
+    [90m267| [39m
+    [90m268| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m269| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39munreadCount)[33m.[39m[34mtoBe[39m([34m0[39m)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m270| [39m    })[33m;[39m
+    [90m271| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22maddMessage[2m > [22mshould increment unread count for received messages
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m321:14[22m[39m
+    [90m319| [39m
+    [90m320| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m321| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39munreadCount)[33m.[39m[34mtoBe[39m([34m1[39m)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m322| [39m    })[33m;[39m
+    [90m323| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22maddMessage[2m > [22mshould enforce message limit per chat
+[31m[1mAssertionError[22m: expected [] to have a length of 1000 but got +0[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 1000[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m340:24[22m[39m
+    [90m338| [39m
+    [90m339| [39m      [35mconst[39m messages [33m=[39m messageService[33m.[39m[34mgetMessages[39m([32m'chat_1'[39m)[33m;[39m
+    [90m340| [39m      [34mexpect[39m(messages)[33m.[39m[34mtoHaveLength[39m([33mMAX_MESSAGES_PER_CHAT[39m)[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m341| [39m      [90m// Should keep the most recent messages[39m
+    [90m342| [39m      [34mexpect[39m(messages[[34m0[39m][33m.[39mid)[33m.[39m[34mtoBe[39m([32m'msg_1'[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22maddMessage[2m > [22mshould not affect messages from other chats when enforcing limit
+[31m[1mAssertionError[22m: expected [] to have a length of 1 but got +0[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 1[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m395:29[22m[39m
+    [90m393| [39m      [90m// Chat 2 message should still exist[39m
+    [90m394| [39m      [35mconst[39m chat2Messages [33m=[39m messageService[33m.[39m[34mgetMessages[39m([32m'chat_2'[39m)[33m;[39m
+    [90m395| [39m      [34mexpect[39m(chat2Messages)[33m.[39m[34mtoHaveLength[39m([34m1[39m)[33m;[39m
+    [90m   | [39m                            [31m^[39m
+    [90m396| [39m      [34mexpect[39m(chat2Messages[[34m0[39m][33m.[39mid)[33m.[39m[34mtoBe[39m([32m'msg_chat2'[39m)[33m;[39m
+    [90m397| [39m    })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22msubscribeToChats[2m > [22mshould call callback when chats are updated
+[31m[1mAssertionError[22m: expected [] to deeply equal [ { id: 'chat_1', …(5) } ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- [[39m
+[32m-   {[39m
+[32m-     "avatar": null,[39m
+[32m-     "id": "chat_1",[39m
+[32m-     "lastMessage": null,[39m
+[32m-     "name": "Test Chat",[39m
+[32m-     "online": true,[39m
+[32m-     "unreadCount": 0,[39m
+[32m-   },[39m
+[32m- ][39m
+[31m+ [][39m
+
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m537:41[22m[39m
+    [90m535| [39m
+    [90m536| [39m      [34mexpect[39m(callback)[33m.[39m[34mtoHaveBeenCalled[39m()[33m;[39m
+    [90m537| [39m      [34mexpect[39m(callback[33m.[39mmock[33m.[39mcalls[[34m0[39m][[34m0[39m])[33m.[39m[34mtoEqual[39m(mockChats)[33m;[39m
+    [90m   | [39m                                        [31m^[39m
+    [90m538| [39m    })[33m;[39m
+    [90m539| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22msubscribeToChats[2m > [22mshould return unsubscribe function
+[31m[1mAssertionError[22m: expected "spy" to be called 1 times, but got 0 times[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m557:24[22m[39m
+    [90m555| [39m
+    [90m556| [39m      messageService[33m.[39m[34mmarkAsRead[39m([32m'chat_1'[39m)[33m;[39m
+    [90m557| [39m      [34mexpect[39m(callback)[33m.[39m[34mtoHaveBeenCalledTimes[39m([34m1[39m)[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m558| [39m
+    [90m559| [39m      [34munsubscribe[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mmarkAsRead[2m > [22mshould set unread count to 0
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m585:14[22m[39m
+    [90m583| [39m
+    [90m584| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m585| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39munreadCount)[33m.[39m[34mtoBe[39m([34m0[39m)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m586| [39m    })[33m;[39m
+    [90m587| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mmarkAsRead[2m > [22mshould notify chat subscribers
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m594:24[22m[39m
+    [90m592| [39m      messageService[33m.[39m[34mmarkAsRead[39m([32m'chat_1'[39m)[33m;[39m
+    [90m593| [39m
+    [90m594| [39m      [34mexpect[39m(callback)[33m.[39m[34mtoHaveBeenCalled[39m()[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m595| [39m    })[33m;[39m
+    [90m596| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mmarkAsUnread[2m > [22mshould set unread count to default value when count not provided
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m627:14[22m[39m
+    [90m625| [39m
+    [90m626| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m627| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39munreadCount)[33m.[39m[34mtoBe[39m([34m1[39m)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m628| [39m    })[33m;[39m
+    [90m629| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mmarkAsUnread[2m > [22mshould set unread count to specified value
+[31m[1mTypeError[22m: Cannot read properties of null (reading '0')[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m634:14[22m[39m
+    [90m632| [39m
+    [90m633| [39m      [35mconst[39m chats [33m=[39m storageService[33m.[39mgetItem[33m<[39m[33mChat[39m[][33m>[39m([33mSTORAGE_KEYS[39m[33m.[39m[33mCHATS[39m)[33m;[39m
+    [90m634| [39m      [34mexpect[39m(chats[33m![39m[[34m0[39m][33m.[39munreadCount)[33m.[39m[34mtoBe[39m([34m10[39m)[33m;[39m
+    [90m   | [39m             [31m^[39m
+    [90m635| [39m    })[33m;[39m
+    [90m636| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/services/__tests__/MessageService.test.ts[2m > [22mMessageService[2m > [22mmarkAsUnread[2m > [22mshould notify chat subscribers
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2m❯[22m src/services/__tests__/MessageService.test.ts:[2m643:24[22m[39m
+    [90m641| [39m      messageService[33m.[39m[34mmarkAsUnread[39m([32m'chat_1'[39m[33m,[39m [34m3[39m)[33m;[39m
+    [90m642| [39m
+    [90m643| [39m      [34mexpect[39m(callback)[33m.[39m[34mtoHaveBeenCalled[39m()[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m644| [39m    })[33m;[39m
+    [90m645| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould render without crashing
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould display welcome message when no chat is selected
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould initialize PostMessage service on mount
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould destroy PostMessage service on unmount
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould initialize Web Worker on mount
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould pass callback to PostMessage service that calls addMessage
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould display ChatList with chats
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould handle chat selection
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould handle mark as unread callback
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould auto-select chat when messageId is in URL
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould not auto-select chat if messageId not found
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould not auto-select chat if already selected
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould handle worker MOCK_REPLY message
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould render MessageInput when chat is selected
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould disable MessageInput when loading
+[41m[1m FAIL [22m[49m src/components/ChatLayout/__tests__/ChatLayout.test.tsx[2m > [22mChatLayout[2m > [22mshould display selected chat name in MessageArea
+[31m[1mTypeError[22m: worker.addEventListener is not a function[39m
+[36m [2m❯[22m src/hooks/useInfiniteMessages.ts:[2m83:12[22m[39m
+    [90m 81| [39m    }[33m;[39m
+    [90m 82| [39m
+    [90m 83| [39m    worker[33m.[39m[34maddEventListener[39m([32m'message'[39m[33m,[39m handler)[33m;[39m
+    [90m   | [39m           [31m^[39m
+    [90m 84| [39m
+    [90m 85| [39m    [35mreturn[39m () [33m=>[39m {
+[90m [2m❯[22m Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:[2m25989:20[22m[39m
+[90m [2m❯[22m runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:[2m874:13[22m[39m
+[90m [2m❯[22m commitHookEffectListMount node_modules/react-dom/cjs/react-dom-client.development.js:[2m13249:29[22m[39m
+[90m [2m❯[22m commitHookPassiveMountEffects node_modules/react-dom/cjs/react-dom-client.development.js:[2m13336:11[22m[39m
+[90m [2m❯[22m commitPassiveMountOnFiber node_modules/react-dom/cjs/react-dom-client.development.js:[2m15484:13[22m[39m
+[90m [2m❯[22m recursivelyTraversePassiveMountEffects node_modules/react-dom/cjs/react-dom-client.development.js:[2m15439:11[22m[39m
+[90m [2m❯[22m commitPassiveMountOnFiber node_modules/react-dom/cjs/react-dom-client.development.js:[2m15519:11[22m[39m
+[90m [2m❯[22m flushPassiveEffects node_modules/react-dom/cjs/react-dom-client.development.js:[2m18432:9[22m[39m
+[90m [2m❯[22m node_modules/react-dom/cjs/react-dom-client.development.js:[2m17923:15[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/60]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/components/MessageArea/__tests__/MessageAreaInfinite.test.tsx[2m > [22mMessageAreaInfinite[2m > [22mshould display date separators for different days
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: /Jan 1, 2024/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex-1 flex flex-col bg-chat-bg min-h-0"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"p-4 bg-white border-b border-gray-200 shadow-sm flex-shrink-0"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mclass[39m=[32m"text-lg font-semibold m-0 flex-1"[39m
+          [36m>[39m
+            [0mTest Chat[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"w-2.5 h-2.5 rounded-full bg-green-500"[39m
+            [36m/>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-sm text-gray-600"[39m
+            [36m>[39m
+              [0mOnline[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-1"[39m
+        [33mdata-testid[39m=[32m"messages-list"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"h-10 flex items-center justify-center mb-2"[39m
+        [36m/>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-center my-4"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bg-white rounded-full px-3 py-1 text-xs text-gray-500 shadow-sm"[39m
+            [36m>[39m
+              [0mMon, Jan 1[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex mb-1 justify-start"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-message-id[39m=[32m"msg_1"[39m
+              [33mdata-testid[39m=[32m"message-msg_1"[39m
+              [33mstyle[39m=[32m"max-width: 70%;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-white rounded-2xl rounded-bl-md
+                    "[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-xs font-semibold text-primary-dark mb-1"[39m
+                [36m>[39m
+                  [0mAlice[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[15px] leading-relaxed mb-1 text-gray-900"[39m
+                [36m>[39m
+                  [0mHello[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-2 justify-end"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-[11px] text-gray-500"[39m
+                  [36m>[39m
+                    [0m10:00 AM[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex mb-1 justify-end"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-message-id[39m=[32m"msg_2"[39m
+              [33mdata-testid[39m=[32m"message-msg_2"[39m
+              [33mstyle[39m=[32m"max-width: 70%;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-primary text-white rounded-2xl rounded-br-md
+                    "[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[15px] leading-relaxed mb-1 text-white"[39m
+                [36m>[39m
+                  [0mHi there![0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-2 justify-end"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-[11px] text-white/80"[39m
+                  [36m>[39m
+                    [0m10:01 AM[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-[11px] text-white/80"[39m
+                  [36m>[39m
+                    [0m✓[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-center my-4"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"bg-white rounded-full px-3 py-1 text-xs text-gray-500 shadow-sm"[39m
+            [36m>[39m
+              [0mTue, Jan 2[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex mb-1 justify-start"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m""[39m
+              [33mdata-message-id[39m=[32m"msg_3"[39m
+              [33mdata-testid[39m=[32m"message-msg_3"[39m
+              [33mstyle[39m=[32m"max-width: 70%;"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"
+                      px-3 py-2 shadow-sm break-words transition-all duration-200 hover:shadow-md
+                      bg-white rounded-2xl rounded-bl-md
+                    "[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-xs font-semibold text-primary-dark mb-1"[39m
+                [36m>[39m
+                  [0mAlice[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"text-[15px] leading-relaxed mb-1 text-gray-900"[39m
+                [36m>[39m
+                  [0mHow are you?[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center gap-2 justify-end"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-[11px] text-gray-500"[39m
+                  [36m>[39m
+                    [0m02:00 PM[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/components/MessageArea/__tests__/MessageAreaInfinite.test.tsx:[2m119:19[22m[39m
+    [90m117| [39m    [34mrender[39m([33m<[39m[33mMessageAreaInfinite[39m [33m{[39m[33m...[39mdefaultProps[33m}[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m118| [39m    [90m// Should have date separators for Jan 1 and Jan 2[39m
+    [90m119| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/Jan 1, 2024/i[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   | [39m                  [31m^[39m
+    [90m120| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/Jan 2, 2024/i[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m121| [39m  })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/60]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m7 failed[39m[22m[2m | [22m[1m[32m10 passed[39m[22m[90m (17)[39m
+[2m      Tests [22m [1m[31m53 failed[39m[22m[2m | [22m[1m[32m166 passed[39m[22m[90m (219)[39m
+[2m   Start at [22m 12:00:23
+[2m   Duration [22m 9.39s[2m (transform 4.36s, setup 12.52s, collect 14.55s, tests 7.20s, environment 44.32s, prepare 9.72s)[22m
+
