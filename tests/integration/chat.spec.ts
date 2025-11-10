@@ -139,13 +139,14 @@ test.describe('Chat Application', () => {
     // Click first chat
     await firstChat.click();
     await page.waitForTimeout(300);
-    await expect(firstChat).toHaveClass(/active/);
+    await expect(firstChat).toHaveClass(/bg-blue-50.*border-l-primary/);
 
-    // Click second chat
+    // Click second chat - this opens dual-chat view in the new implementation
     await secondChat.click();
     await page.waitForTimeout(300);
-    await expect(secondChat).toHaveClass(/active/);
-    await expect(firstChat).not.toHaveClass(/active/);
+    // Both chats should be highlighted now (dual-chat mode)
+    await expect(firstChat).toHaveClass(/bg-blue-50/);
+    await expect(secondChat).toHaveClass(/bg-blue-50/);
   });
 
   test('should show avatar or initial in chat list', async ({ page }) => {

@@ -5,6 +5,7 @@ import { CHAT_LIST } from "../../constants/ui.constants";
 export const ChatList = ({
   chats,
   selectedChatId,
+  selectedChatIds = [],
   onChatSelect,
   onMarkAsUnread,
 }: ChatListProps) => {
@@ -21,6 +22,9 @@ export const ChatList = ({
       <div className="flex-1 overflow-y-auto">
         {chats.map((chat) => {
           const hasUnread = chat.unreadCount > 0;
+          const isSelected = selectedChatIds.includes(chat.id);
+          const isPrimarySelection = chat.id === selectedChatId;
+
           return (
             <div
               key={chat.id}
@@ -30,8 +34,10 @@ export const ChatList = ({
                 cursor-pointer p-3 px-4 transition-all duration-200 border-b border-gray-100
                 hover:bg-gray-50
                 ${
-                  chat.id === selectedChatId
+                  isPrimarySelection
                     ? "bg-blue-50 border-l-4 border-l-primary active"
+                    : isSelected
+                    ? "bg-blue-50/60 border-l-4 border-l-blue-300"
                     : hasUnread
                     ? "bg-blue-50/30"
                     : ""
@@ -102,6 +108,14 @@ export const ChatList = ({
                       </span>
                     )}
                   </div>
+                  {/* Show indicator for secondary selection */}
+                  {isSelected && !isPrimarySelection && (
+                    <div className="mt-1">
+                      <span className="text-[10px] text-blue-600 font-medium bg-blue-100 px-2 py-0.5 rounded-full">
+                        Split view
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

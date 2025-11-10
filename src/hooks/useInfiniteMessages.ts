@@ -25,10 +25,11 @@ export const useInfiniteMessages = (chatId: string | null, worker: Worker | null
     const allMessages = messageService.getMessages(currentChatId);
 
     if (worker) {
-      // Request paginated load via worker
+      // Request paginated load via worker (include chatId)
       worker.postMessage({
         type: WorkerMessageType.LOAD_MESSAGES_PAGINATED,
         payload: {
+          chatId: currentChatId,
           messages: allMessages,
           offset: currentOffset,
           limit: MESSAGES_PER_PAGE,
@@ -61,17 +62,24 @@ export const useInfiniteMessages = (chatId: string | null, worker: Worker | null
 
   // Set up worker message handler
   useEffect(() => {
-    if (!worker) return;
+    if (!worker || !chatId) return;
 
     const handler = (event: MessageEvent) => {
+      const payload = event.data.payload;
+
+      // Filter messages by chatId - only process if it matches this hook's chatId
       if (event.data.type === WorkerMessageType.MESSAGES_LOADED) {
-        const { messages: loadedMessages, hasMore: more } = event.data.payload;
+        if (payload.chatId !== chatId) return; // Ignore messages for other chats
+
+        const { messages: loadedMessages, hasMore: more } = payload;
         setMessages((prev) => [...loadedMessages, ...prev]);
         setHasMore(more);
         setOffset((prevOffset) => prevOffset + MESSAGES_PER_PAGE);
         setLoading(false);
       } else if (event.data.type === WorkerMessageType.ALL_MESSAGES_LOADED) {
-        const { messages: loadedMessages, hasMore: more } = event.data.payload;
+        if (payload.chatId !== chatId) return; // Ignore messages for other chats
+
+        const { messages: loadedMessages, hasMore: more } = payload;
         console.log('All messages loaded from worker:', loadedMessages.length);
         setMessages(loadedMessages);
         setHasMore(more);
@@ -85,7 +93,7 @@ export const useInfiniteMessages = (chatId: string | null, worker: Worker | null
     return () => {
       worker.removeEventListener('message', handler);
     };
-  }, [worker]);
+  }, [worker, chatId]);
 
   useEffect(() => {
     if (!chatId) {
@@ -112,10 +120,11 @@ export const useInfiniteMessages = (chatId: string | null, worker: Worker | null
       const allMessages = messageService.getMessages(chatId);
 
       if (worker) {
-        // Use worker to load all messages
+        // Use worker to load all messages (include chatId)
         worker.postMessage({
           type: WorkerMessageType.LOAD_ALL_MESSAGES,
           payload: {
+            chatId,
             messages: allMessages,
           },
         });

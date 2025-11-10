@@ -124,6 +124,7 @@ describe('useInfiniteMessages', () => {
         data: {
           type: WorkerMessageType.MESSAGES_LOADED,
           payload: {
+            chatId: 'chat_1',
             messages: mockMessages.slice(0, 20),
             hasMore: true,
           },
@@ -150,6 +151,7 @@ describe('useInfiniteMessages', () => {
         data: {
           type: WorkerMessageType.ALL_MESSAGES_LOADED,
           payload: {
+            chatId: 'chat_1',
             messages: mockMessages,
             hasMore: false,
           },
@@ -174,6 +176,7 @@ describe('useInfiniteMessages', () => {
     expect(mockWorker.postMessage).toHaveBeenCalledWith({
       type: WorkerMessageType.LOAD_ALL_MESSAGES,
       payload: {
+        chatId: 'chat_1',
         messages: expect.arrayContaining([
           expect.objectContaining({ id: 'msg_50' }),
         ]),
@@ -230,6 +233,7 @@ describe('useInfiniteMessages', () => {
         data: {
           type: WorkerMessageType.MESSAGES_LOADED,
           payload: {
+            chatId: 'chat_1',
             messages: mockMessages.slice(0, 20),
             hasMore: true,
           },
@@ -296,6 +300,7 @@ describe('useInfiniteMessages', () => {
         data: {
           type: WorkerMessageType.MESSAGES_LOADED,
           payload: {
+            chatId: 'chat_1',
             messages: mockMessages.slice(0, 20),
             hasMore: true,
           },

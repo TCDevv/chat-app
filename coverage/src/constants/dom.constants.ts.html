@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,80 +100,80 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >/**</span></span></span>
-<span class="cstat-no" title="statement not covered" > * DOM Constants</span>
-<span class="cstat-no" title="statement not covered" > * Contains DOM selectors, query parameters, scroll behavior, and test IDs</span>
-<span class="cstat-no" title="statement not covered" > */</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Query Parameters</span>
-<span class="cstat-no" title="statement not covered" >export const QUERY_PARAMS = {</span>
-<span class="cstat-no" title="statement not covered" >  MESSAGE_ID: 'messageId',</span>
-<span class="cstat-no" title="statement not covered" >} as const;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// DOM Selectors</span>
-<span class="cstat-no" title="statement not covered" >export const DOM_SELECTORS = {</span>
-<span class="cstat-no" title="statement not covered" >  MESSAGE_BY_ID_PREFIX: '[data-message-id="',</span>
-<span class="cstat-no" title="statement not covered" >  MESSAGE_BY_ID_SUFFIX: '"]',</span>
-<span class="cstat-no" title="statement not covered" >} as const;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Helper function to build message selector</span>
-<span class="cstat-no" title="statement not covered" >export const getMessageSelector = (messageId: string): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return `${DOM_SELECTORS.MESSAGE_BY_ID_PREFIX}${messageId}${DOM_SELECTORS.MESSAGE_BY_ID_SUFFIX}`;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// CSS Classes</span>
-<span class="cstat-no" title="statement not covered" >export const CSS_CLASSES = {</span>
-<span class="cstat-no" title="statement not covered" >  MESSAGE_HIGHLIGHT: 'highlighted-message',</span>
-<span class="cstat-no" title="statement not covered" >} as const;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Scroll Behavior</span>
-<span class="cstat-no" title="statement not covered" >export const SCROLL_BEHAVIOR = {</span>
-<span class="cstat-no" title="statement not covered" >  BEHAVIOR: 'smooth' as ScrollBehavior,</span>
-<span class="cstat-no" title="statement not covered" >  BLOCK: 'center' as ScrollLogicalPosition,</span>
-<span class="cstat-no" title="statement not covered" >} as const;</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Test IDs for Testing</span>
-<span class="cstat-no" title="statement not covered" >export const TEST_IDS = {</span>
-<span class="cstat-no" title="statement not covered" >  MESSAGE_INPUT: 'message-input',</span>
-<span class="cstat-no" title="statement not covered" >  SEND_BUTTON: 'send-button',</span>
-<span class="cstat-no" title="statement not covered" >} as const;</span>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * DOM Constants
+ * Contains DOM selectors, query parameters, scroll behavior, and test IDs
+ */
+&nbsp;
+// Query Parameters
+export const QUERY_PARAMS = {
+  MESSAGE_ID: 'messageId',
+} as const;
+&nbsp;
+// DOM Selectors
+export const DOM_SELECTORS = {
+  MESSAGE_BY_ID_PREFIX: '[data-message-id="',
+  MESSAGE_BY_ID_SUFFIX: '"]',
+} as const;
+&nbsp;
+// Helper function to build message selector
+export const getMessageSelector = (messageId: string): string =&gt; {
+  return `${DOM_SELECTORS.MESSAGE_BY_ID_PREFIX}${messageId}${DOM_SELECTORS.MESSAGE_BY_ID_SUFFIX}`;
+};
+&nbsp;
+// CSS Classes
+export const CSS_CLASSES = {
+  MESSAGE_HIGHLIGHT: 'highlighted-message',
+} as const;
+&nbsp;
+// Scroll Behavior
+export const SCROLL_BEHAVIOR = {
+  BEHAVIOR: 'smooth' as ScrollBehavior,
+  BLOCK: 'center' as ScrollLogicalPosition,
+} as const;
+&nbsp;
+// Test IDs for Testing
+export const TEST_IDS = {
+  MESSAGE_INPUT: 'message-input',
+  SEND_BUTTON: 'send-button',
+} as const;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -181,7 +181,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-29T05:02:42.228Z
+                at 2025-11-07T07:57:05.312Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

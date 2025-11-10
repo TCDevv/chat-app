@@ -17,12 +17,14 @@ interface WorkerMessage {
 }
 
 interface LoadMessagesPaginatedPayload {
+  chatId: string;
   messages: Message[];
   offset: number;
   limit: number;
 }
 
 interface LoadAllMessagesPayload {
+  chatId: string;
   messages: Message[];
 }
 
@@ -59,7 +61,7 @@ self.onmessage = (event: MessageEvent<WorkerMessage>): void => {
  * Load messages in pages for infinite scroll
  */
 function handleLoadMessages(payload: LoadMessagesPaginatedPayload): void {
-  const { messages, offset, limit } = payload;
+  const { chatId, messages, offset, limit } = payload;
 
   setTimeout(() => {
     const paginatedMessages = messages.slice(offset, offset + limit);
@@ -68,6 +70,7 @@ function handleLoadMessages(payload: LoadMessagesPaginatedPayload): void {
     const response: WorkerResponse = {
       type: WorkerMessageType.MESSAGES_LOADED,
       payload: {
+        chatId,
         messages: paginatedMessages,
         offset,
         hasMore,
@@ -82,12 +85,13 @@ function handleLoadMessages(payload: LoadMessagesPaginatedPayload): void {
  * Load ALL messages at once (used when scrolling to a specific message from URL)
  */
 function handleLoadAllMessages(payload: LoadAllMessagesPayload): void {
-  const { messages } = payload;
+  const { chatId, messages } = payload;
 
   setTimeout(() => {
     const response: WorkerResponse = {
       type: WorkerMessageType.ALL_MESSAGES_LOADED,
       payload: {
+        chatId,
         messages,
         hasMore: false,
       },
